@@ -4,8 +4,22 @@ An experiment to create professional PDF documents using simple markdown documen
 
 ## Requirements
 
-## Set up
+## Bill of Materials
 
-Devices:None speciifc
+Devices:
+- None speciifc
 
-Software: ...
+Software: 
+- ...
+
+## Set-up
+
+## Conduction
+
+## Observation
+
+## Interpretation
+
+## References
+
+
