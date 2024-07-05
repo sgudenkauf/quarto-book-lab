@@ -1,4 +1,4 @@
-# panrun-eisvogel-template
+# quarto-course-template
 
 An experiment to create professional PDF documents using simple markdown documents as input.
 
