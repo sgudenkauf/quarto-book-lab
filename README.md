@@ -87,7 +87,7 @@ plt.show()
 
 The [Quarto tutorial](https://quarto.org/docs/get-started/hello/vscode.html) uses the Python packages `matplotlib` and `plotly`. Also, to process executable code blocks in a `.qmd` file, we depend on [Jupyter](https://jupyter.org/). After processing the executable code blocks, Jupyter converts the resulting comination of program code, markdown text, and generated data to plain markdown. This markdown is then processed by [Pandoc](https://pandoc.org/) to create the final output formats (e.g. HTML web pages, PDF documents, Microsoft Office files). 
 
-> **Note:** We do not need to install [Pandoc](https://pandoc.org/) separately sinde it is bundled in Quarto internally. You can access it in the terminal with the command `quarto pandoc file.md -o out.html`.
+> **Note:** We do not need to install [Pandoc](https://pandoc.org/) separately since it is bundled in Quarto internally. You can access it in the terminal with the command `quarto pandoc file.md -o out.html`.
 
 Open a terminal in Admin mode (super user priviledges, see Fig. 1) and install the required Python packages:
 
@@ -97,18 +97,24 @@ pip install jupyter matplotlib plotly
 
 ![Fig. 1: Run command prompt as Admin (Windows)](image-1.png)
 
-> **Note:** We recommend installing these packages in a [Python virtual environment (*venv*)](https://docs.python.org/3/tutorial/venv.html) to protect the global operating system level Python installation:
->
->```bash
->python -m venv .quarto-venv # Creates a new venv named '.quarto-venv'
->
->source .quarto-venv/bin/activate  # Activate the venv (Unix/Linux)
->.quarto-venv\Scripts\activate.bat # Activate the venv (Windows)
->
-> (.quarto-venv) > pip install jupyter matplotlib plotly # Install packages
->
-> deactivate # Deactivates the venv (optional)
->```
+> **Note:** We recommend installing these packages in a [Python virtual environment (*venv*)](https://docs.python.org/3/tutorial/venv.html) to protect the global operating system level Python installation.
+
+```bash#
+# Create a new venv named '.quarto-venv'
+python -m venv .quarto-venv 
+
+# Activate the venv (Unix/Linux)
+source .quarto-venv/bin/activate  
+
+# Activate the venv (Windows)
+.quarto-venv\Scripts\activate.bat 
+
+# Install packages
+(.quarto-venv) > pip install jupyter matplotlib plotly 
+
+# Deactivate the venv (optional)
+deactivate 
+```
 
 Open a terminal and render the document (see Fig. 2):
 ```

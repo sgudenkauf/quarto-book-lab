@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+<link rel="stylesheet" href="file:///c%3A/Users/st1056/Documents/GitHub/quarto-course-template/css/wilhelmshaven.css" type="text/css">
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///c%3A/Users/st1056/Documents/GitHub/quarto-course-template/css/hannover.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="quarto-course-template">quarto-course-template</h1>
+<p>An experiment to create professional documents using simple markdown text as input.</p>
+<h2 id="requirements">Requirements</h2>
+<ol>
+<li><strong>Robust tooling</strong> that is portable and can be saved/archived independently.</li>
+<li><strong>Convenient text editing</strong> with minimal markup, support for math and program code.</li>
+<li><strong>Various output formats</strong> such as HTML web pages, EPUB e-books, Microsoft Office files and PDF documents.</li>
+</ol>
+<h2 id="bill-of-materials">Bill of Materials</h2>
+<p><strong>Device:</strong></p>
+<ul>
+<li>Processor: Intel(R) Core(TM) i7-1065G7 CPU @ 1.30GHz 1.50 GHz</li>
+<li>RAM: 16,0 GB (15,6 GB verwendbar)</li>
+<li>System Type: 64-Bit-Betriebssystem, x64-basierter Prozessor</li>
+<li>Pen and Touch Input: Supported</li>
+</ul>
+<p><strong>Operating System:</strong></p>
+<ul>
+<li>Edition: Windows 10 Enterprise</li>
+<li>Version: 22H2</li>
+<li>Installed: 01.10.2020</li>
+<li>OS Build: 19045.4651</li>
+<li>Performance: Windows Feature Experience Pack 1000.19060.1000.0</li>
+</ul>
+<p><strong>Software:</strong></p>
+<ul>
+<li>Publishing platform
+<ul>
+<li><a href="https://quarto.org/docs/get-started/">Quarto Command Line Interface (CLI)</a>: Version <code>1.5.54</code></li>
+</ul>
+</li>
+<li>Python packages
+<ul>
+<li><a href="https://matplotlib.org/">Matplotlib</a> visualization library: <code>matplotlib</code></li>
+<li><a href="https://plotly.com/python/">Plotly</a> open source graphing library: <code>plotly</code></li>
+<li><a href="https://jupyter.org/">Jupyter</a> interactive computing platform: <code>jupyter</code></li>
+</ul>
+</li>
+<li>Personal development environment
+<ul>
+<li><a href="https://code.visualstudio.com/download">Visual Studio Code</a>: <code>VSCode-win32-x64-1.91.0.zip</code></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=quarto.quarto">Quarto extension for Visual Studio Code</a>  : <code>quarto.quarto-1.113.0.vsix</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="set-up">Set-up</h2>
+<h3 id="install-the-publishing-platform">Install the Publishing Platform</h3>
+<p>Download an installer for the <a href="https://quarto.org/docs/get-started/">Quarto Command Line Interface (CLI)</a> for your operation system of choice and install. Check if Quarto is working by opening a command line interface/text terminal and typing:</p>
+<pre class="hljs"><code><div>quarto --version
+</div></code></pre>
+<p>The result should display the current version of your Quarto installation (e.g., <code>1.5.54</code>).</p>
+<h3 id="configure-and-test-the-publishing-platform">Configure and Test the Publishing Platform</h3>
+<p>To configure and test the publishing platform, we will follow the <a href="https://quarto.org/docs/get-started/hello/vscode.html">Tutorial: Hello, Quarto</a>.</p>
+<p>First, create a new file named <code>hello.qmd</code> and copy <a href="https://quarto.org/docs/get-started/hello/text-editor.html">the following content</a> into it:</p>
+<pre class="hljs"><code><div>---
+title: &quot;Quarto Basics&quot;
+format:
+ html:
+   code-fold: true
+jupyter: python3
+---
+
+For a demonstration of a line plot on a polar axis, see @fig-polar.
+
+```{python}
+#| label: fig-polar
+#| fig-cap: &quot;A line plot on a polar axis&quot;
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(
+ subplot_kw = {'projection': 'polar'} 
+)
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
+</div></code></pre>
+<p>The <a href="https://quarto.org/docs/get-started/hello/vscode.html">Quarto tutorial</a> uses the Python packages <code>matplotlib</code> and <code>plotly</code>. Also, to process executable code blocks in a <code>.qmd</code> file, we depend on <a href="https://jupyter.org/">Jupyter</a>. After processing the executable code blocks, Jupyter converts the resulting comination of program code, markdown text, and generated data to plain markdown. This markdown is then processed by <a href="https://pandoc.org/">Pandoc</a> to create the final output formats (e.g. HTML web pages, PDF documents, Microsoft Office files).</p>
+<blockquote>
+<p><strong>Note:</strong> We do not need to install <a href="https://pandoc.org/">Pandoc</a> separately since it is bundled in Quarto internally. You can access it in the terminal with the command <code>quarto pandoc file.md -o out.html</code>.</p>
+</blockquote>
+<p>Open a terminal in Admin mode (super user priviledges, see Fig. 1) and install the required Python packages:</p>
+<pre class="hljs"><code><div>pip install jupyter matplotlib plotly
+</div></code></pre>
+<p><img src="image-1.png" alt="Fig. 1: Run command prompt as Admin (Windows)"></p>
+<blockquote>
+<p><strong>Note:</strong> We recommend installing these packages in a <a href="https://docs.python.org/3/tutorial/venv.html">Python virtual environment (<em>venv</em>)</a> to protect the global operating system level Python installation.</p>
+</blockquote>
+<pre class="hljs"><code><div># Create a new venv named '.quarto-venv'
+python -m venv .quarto-venv 
+
+# Activate the venv (Unix/Linux)
+source .quarto-venv/bin/activate  
+
+# Activate the venv (Windows)
+.quarto-venv\Scripts\activate.bat 
+
+# Install packages
+(.quarto-venv) &gt; pip install jupyter matplotlib plotly 
+
+# Deactivate the venv (optional)
+deactivate 
+</div></code></pre>
+<p>Open a terminal and render the document (see Fig. 2):</p>
+<pre class="hljs"><code><div>quarto render hello.qmd --to html
+quarto render hello.qmd --to docx
+</div></code></pre>
+<p><img src="image-2.png" alt="Fig. 2: The documents rendered with Quarto"></p>
+<blockquote>
+<p><strong>Note:</strong> If you use a Python virtual environment (<em>venv</em>), you must render your Quarto documents within the activated <em>venv</em>.</p>
+</blockquote>
+<p>To create PDF documents, install a recent distribution of TeX. Quarto recommends the use of TinyTeX:</p>
+<pre class="hljs"><code><div>quarto install tinytex
+</div></code></pre>
+<p>Open a terminal and render the document as a PDF document:</p>
+<pre class="hljs"><code><div>quarto render hello.qmd --to pdf
+</div></code></pre>
+<h3 id="prepare-the-personal-development-environment">Prepare the Personal Development Environment</h3>
+<p>Download <a href="https://code.visualstudio.com/download">Visual Studio Code</a> as a compressed ZIP-file archive. We do not use an installer since we want to create a portable development environment that we can save and backup independently.</p>
+<p>Unzip the archive and inspect the folder structure. Enable <a href="https://code.visualstudio.com/docs/editor/portable">portable mode</a> by creating a <code>data</code> folder within VS Code's application folder:</p>
+<pre class="hljs"><code><div>|- VSCode-win32-x64-1.91.0
+|   |- Code.exe
+|   |- data
+|   |- bin
+|   |- ...
+</div></code></pre>
+<p>Install the <a href="https://marketplace.visualstudio.com/items?itemName=quarto.quarto">Quarto extension</a> for Visual Studio Code as shown in Fig. 3. Open Visual Studio Code (<code>Code.exe</code>), click on the <em>Extensions</em> button in the left panel, search for <code>quarto</code> and click on the <em>Quarto</em> Extension. In the  install the extension .</p>
+<p><img src="image.png" alt="Fig. 3: Install the Quarto extension"></p>
+<p>Save your custom development environment (the portable Visual Studio Code installation) by creating a ZIP-file archive of the VS Code's application folder after you installed the Quarto extension. You can rename the folder before creating the ZIP-file to reflect the distinctiveness of your development environment: <code>VSCode-win32-x64-1.91.0-quarto.zip</code>. Integrate the ZIP-file in your project's backup process.</p>
+<h3 id="prepare-the-project-structure">Prepare the Project Structure</h3>
+<p>Create a folder <code>examples</code> and move the file <code>hello.qmd</code> and the generated documents to the folder. We will use the folder for isolated examples and experiments.</p>
+<p>Create the following folders:</p>
+<ul>
+<li><code>lecture</code> -- a template for a <a href="https://www.duarte.com/resources/books/slidedocs/">slidedoc</a> that represents a lecture.</li>
+<li><code>slides</code> -- a template for presentation slides.</li>
+<li><code>book</code> -- a template for a book.</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<h3 id="create-a-book-template">Create a Book Template</h3>
+<p>Follow the <a href="https://quarto.org/docs/books/#overview">Creating a Book</a> tutorial from the Quarto web page:</p>
+<p>In your Visual Studio Code developmnent environment, execute the <em><strong>Quarto: Create Project</strong></em> command. Then, select <em><strong>Book Project</strong></em> and choose the <code>book</code> folder as the parent directory.</p>
+<p>In the terminal, move to the <code>book</code> folder and execute quarto:</p>
+<pre class="hljs"><code><div><span class="hljs-built_in">cd</span> book
+quarto render           <span class="hljs-comment"># render all formats</span>
+quarto render --to pdf  <span class="hljs-comment"># render PDF format only</span>
+</div></code></pre>
+<h3 id="more-infos">More Infos</h3>
+<ul>
+<li><a href="https://quarto.org/docs/get-started/hello/vscode.html">Tutorial: Hello, Quarto</a></li>
+<li><a href="https://learn.adafruit.com/python-virtual-environment-usage-on-raspberry-pi/overview">Python Virtual Environment Usage on Raspberry Pi</a></li>
+<li><a href="https://biostats-r.github.io/biostats/quarto/">Enough Markdown to Write a Thesis</a></li>
+<li><a href="https://git.zilium.de/produnis/quarto-thesis-hsnr">quarto-thesis-hsnr</a>, a Quarto book template for a bachelor thesis in german language.</li>
+<li>Is there a way to &quot;include&quot; a excel table in the qmd file. <a href="https://github.com/quarto-dev/quarto-cli/discussions/6373">#6373</a></li>
+<li><a href="https://github.com/james-d-h/quarto-phd-thesis">Quarto PhD Data Science Thesis Template: Edinburgh University</a></li>
+</ul>
+
+</body>
+</html>
