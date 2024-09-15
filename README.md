@@ -181,3 +181,8 @@ quarto render --to pdf  # render PDF format only
 
 - [Tutorial: Hello, Quarto](https://quarto.org/docs/get-started/hello/vscode.html)
 - [Python Virtual Environment Usage on Raspberry Pi](https://learn.adafruit.com/python-virtual-environment-usage-on-raspberry-pi/overview)
+- [Enough Markdown to Write a Thesis](https://biostats-r.github.io/biostats/quarto/)
+- [quarto-thesis-hsnr](https://git.zilium.de/produnis/quarto-thesis-hsnr), a Quarto book template for a bachelor thesis in german language.
+- Is there a way to "include" a excel table in the qmd file. [#6373](https://github.com/quarto-dev/quarto-cli/discussions/6373)
+- [Quarto PhD Data Science Thesis Template: Edinburgh University](https://github.com/james-d-h/quarto-phd-thesis)
+
