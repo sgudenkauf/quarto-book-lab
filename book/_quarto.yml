@@ -5,12 +5,19 @@ book:
   title: "book"
   author: "Stefan Gudenkauf"
   date: "7/19/2024"
+  search: true
   page-navigation: true
+  downloads: [pdf, epub]
+  sidebar:
+    style: "docked"
   chapters:
     - index.qmd
     - intro.qmd
     - summary.qmd
     - references.qmd
+  # favicon: logo.png
+  # site-url: https://example.com
+
 
 toc: true
 toc-depth: 2
@@ -20,13 +27,14 @@ bibliography: references.bib
 
 format:
   html:
-    theme: cerulean
+    theme: simplex
     cover-image: cover.png
+    code-copy: true
   pdf:
-    documentclass: scrreprt  # scrbook
+    #documentclass: scrbook
+    #documentclass: scrreprt
+    documentclass: book
     cover-image: cover.png
   epub:
     cover-image: cover.png
-
-
 

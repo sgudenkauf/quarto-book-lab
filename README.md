@@ -28,13 +28,13 @@ An experiment to create professional documents using simple markdown text as inp
 **Software:**
 
 - Publishing platform
-  - [Quarto Command Line Interface (CLI)](https://quarto.org/docs/get-started/): Version `1.5.54`
+  - [Quarto Command Line Interface (CLI)](https://quarto.org/docs/get-started/): Version `1.6.39`
 - Python packages
   - [Matplotlib](https://matplotlib.org/) visualization library: `matplotlib`
   - [Plotly](https://plotly.com/python/) open source graphing library: `plotly`
   - [Jupyter](https://jupyter.org/) interactive computing platform: `jupyter`
 - Personal development environment
-  - [Visual Studio Code](https://code.visualstudio.com/download): `VSCode-win32-x64-1.91.0.zip`
+  - [Visual Studio Code](https://code.visualstudio.com/download): `VSCode-win32-x64-1.95.3.zip`
   - [Quarto extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quarto.quarto)  : `quarto.quarto-1.113.0.vsix`
 
 ## Set-up
