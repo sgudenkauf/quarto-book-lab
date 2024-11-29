@@ -1,4 +1,4 @@
-# quarto-course-template
+# quarto-book-lab
 
 An experiment to create professional documents using simple markdown text as input.
 
