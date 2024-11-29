@@ -95,7 +95,7 @@ Open a terminal in Admin mode (super user priviledges, see Fig. 1) and install t
 pip install jupyter matplotlib plotly
 ```
 
-![Fig. 1: Run command prompt as Admin (Windows)](image-1.png)
+![Fig. 1: Run command prompt as Admin (Windows)](img/image-1.png)
 
 > **Note:** We recommend installing these packages in a [Python virtual environment (*venv*)](https://docs.python.org/3/tutorial/venv.html) to protect the global operating system level Python installation.
 
@@ -122,7 +122,7 @@ quarto render hello.qmd --to html
 quarto render hello.qmd --to docx
 ```
 
-![Fig. 2: The documents rendered with Quarto](image-2.png)
+![Fig. 2: The documents rendered with Quarto](img/image-2.png)
 
 > **Note:** If you use a Python virtual environment (*venv*), you must render your Quarto documents within the activated *venv*.
 
@@ -154,7 +154,7 @@ Unzip the archive and inspect the folder structure. Enable [portable mode](https
 
 Install the [Quarto extension](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) for Visual Studio Code as shown in Fig. 3. Open Visual Studio Code (`Code.exe`), click on the *Extensions* button in the left panel, search for `quarto` and click on the *Quarto* Extension. In the  install the extension .
 
-![Fig. 3: Install the Quarto extension](image.png)
+![Fig. 3: Install the Quarto extension](img/image.png)
 
 Save your custom development environment (the portable Visual Studio Code installation) by creating a ZIP-file archive of the VS Code's application folder after you installed the Quarto extension. You can rename the folder before creating the ZIP-file to reflect the distinctiveness of your development environment: `VSCode-win32-x64-1.91.0-quarto.zip`. Integrate the ZIP-file in your project's backup process.
 
